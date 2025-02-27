@@ -12,7 +12,7 @@ def http_trigger(req: func.HttpRequest) -> func.HttpResponse:
     start_time = time.time()  # 记录开始时间
 
     # 添加延迟1秒
-    time.sleep(5)
+    time.sleep(1)
 
     name = req.params.get("name")
     if not name:
