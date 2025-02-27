@@ -1,12 +1,15 @@
 import azure.functions as func
 import logging
+import time
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
-
 
 @app.route(route="http_trigger")
 def http_trigger(req: func.HttpRequest) -> func.HttpResponse:
     logging.info("Python HTTP trigger function processed a request.")
+    
+    # 添加延迟1秒
+    time.sleep(1)
 
     name = req.params.get("name")
     if not name:
